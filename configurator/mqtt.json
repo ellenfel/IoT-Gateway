@@ -1,63 +1,87 @@
 {
   "broker": {
     "name": "Default Local Broker",
-    "host": "192.168.1.52",
+    "host": "127.0.0.1",
     "port": 1890,
-    "clientId": "ThingsBoard_gateway",
     "version": 5,
-    "maxMessageNumberPerWorker": 10,
+    "clientId": "tb_gw_oruv4",
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
+    "maxMessageNumberPerWorker": 10,
     "security": {
       "type": "anonymous"
     }
   },
-  "mapping": [
+  "dataMapping": [
     {
-      "topicFilter": "v1/devices/me/telemetry/#",
+      "topicFilter": "v1/devices/me/telemetr",
+      "subscriptionQos": 1,
       "converter": {
         "type": "json",
-        "deviceNameJsonExpression": "A",
-        "deviceTypeJsonExpression": "B",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${devName}",
+          "deviceProfileExpressionSource": "message"
+        },
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
-        "attributes": [ ],
+        "attributes": [],
         "timeseries": [
           {
             "type": "integer",
-            "key": "modbus_chn_1",
+            "key": "water_detector",
             "value": "${modbus_chn_1}"
           },
           {
-            "type": "float",
-            "key": "modbus_chn_15",
-            "value": "${modbus_chn_15}"
+            "type": "integer",
+            "key": "lid_switch",
+            "value": "${modbus_chn_2}"
+          },
+          {
+            "type": "integer",
+            "key": "pulse_a",
+            "value": "${modbus_chn_3}"
+          },
+          {
+            "type": "integer",
+            "key": "pulse_b",
+            "value": "${modbus_chn_4}"
+          },
+          {
+            "type": "integer",
+            "key": "pulse_c",
+            "value": "${modbus_chn_5}"
           },
           {
             "type": "float",
-            "key": "modbus_chn_16",
-            "value": "${modbus_chn_16}"
+            "key": "voltage_a",
+            "value": "${modbus_chn_7}"
           },
           {
             "type": "float",
-            "key": "modbus_chn_17",
-            "value": "${modbus_chn_17}"
+            "key": "voltage_b",
+            "value": "${modbus_chn_8}"
           },
           {
             "type": "float",
-            "key": "modbus_chn_18",
-            "value": "${modbus_chn_18}"
+            "key": "voltage_c",
+            "value": "${modbus_chn_9}"
           },
           {
             "type": "float",
-            "key": "modbus_chn_19",
-            "value": "${modbus_chn_19}"
+            "key": "current_a",
+            "value": "${modbus_chn_10}"
           },
           {
             "type": "float",
-            "key": "modbus_chn_20",
-            "value": "${modbus_chn_20}"
+            "key": "current_b",
+            "value": "${modbus_chn_11}"
           },
+          {
+            "type": "float",
+            "key": "current_c",
+            "value": "${modbus_chn_12}"
+          },
+          
           {
             "type": "float",
             "key": "modbus_chn_21",
@@ -77,11 +101,16 @@
       }
     },
     {
-      "topicFilter": "/sensor/+/data",
+      "topicFilter": "sensor/+/data",
+      "subscriptionQos": 1,
       "converter": {
         "type": "json",
-        "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/data)",
-        "deviceTypeTopicExpression": "Thermometer",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "Thermometer"
+        },
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
@@ -98,7 +127,7 @@
             "value": "${temp}"
           },
           {
-            "type": "double",
+            "type": "string",
             "key": "humidity",
             "value": "${hum}"
           }
@@ -106,11 +135,16 @@
       }
     },
     {
-      "topicFilter": "/sensor/raw_data",
+      "topicFilter": "sensor/raw_data",
+      "subscriptionQos": 1,
       "converter": {
         "type": "bytes",
-        "deviceNameExpression": "[0:4]",
-        "deviceTypeExpression": "default",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "[0:4]",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
@@ -130,73 +164,98 @@
       }
     },
     {
-      "topicFilter": "/custom/sensors/+",
+      "topicFilter": "custom/sensors/+",
+      "subscriptionQos": 1,
       "converter": {
         "type": "custom",
         "extension": "CustomMqttUplinkConverter",
         "cached": true,
-        "extension-config": {
-          "temperatureBytes": 2,
-          "humidityBytes": 2,
-          "batteryLevelBytes": 1
+        "extensionConfig": {
+          "temperature": 2,
+          "humidity": 2,
+          "batteryLevel": 1
         }
       }
     }
   ],
-  "connectRequests": [
-    {
-      "topicFilter": "sensor/connect",
-      "deviceNameJsonExpression": "${SerialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/connect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
-    }
-  ],
-  "disconnectRequests": [
-    {
-      "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${SerialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/disconnect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
-    }
-  ],
-  "attributeRequests": [
-    {
-      "retain": false,
-      "topicFilter": "v1/devices/me/attributes/request",
-      "deviceNameJsonExpression": "${serialNumber}",
-      "attributeNameJsonExpression": "${versionAttribute}, ${pduAttribute}",
-      "topicExpression": "devices/${deviceName}/attrs",
-      "valueExpression": "${attributeKey}: ${attributeValue}"
-    }
-  ],
-  "attributeUpdates": [
-    {
-      "retain": true,
-      "deviceNameFilter": "SmartMeter.*",
-      "attributeFilter": "uploadFrequency",
-      "topicExpression": "sensor/${deviceName}/${attributeKey}",
-      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
-    }
-  ],
-  "serverSideRpc": [
-    {
-      "deviceNameFilter": ".*",
-      "methodFilter": "echo",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
-      "responseTimeout": 10000,
-      "valueExpression": "${params}"
-    },
-    {
-      "deviceNameFilter": ".*",
-      "methodFilter": "no-reply",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "valueExpression": "${params}"
-    }
-  ]
+  "requestsMapping": {
+    "connectRequests": [
+      {
+        "topicFilter": "sensor/connect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "Thermometer"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/connect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "Thermometer"
+        }
+      }
+    ],
+    "disconnectRequests": [
+      {
+        "topicFilter": "sensor/disconnect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/disconnect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
+        }
+      }
+    ],
+    "attributeRequests": [
+      {
+        "retain": false,
+        "topicFilter": "v1/devices/me/attributes/request",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}"
+        },
+        "attributeNameExpressionSource": "message",
+        "attributeNameExpression": "${versionAttribute}, ${pduAttribute}",
+        "topicExpression": "devices/${deviceName}/attrs",
+        "valueExpression": "${attributeKey}: ${attributeValue}"
+      }
+    ],
+    "attributeUpdates": [
+      {
+        "retain": true,
+        "deviceNameFilter": ".*",
+        "attributeFilter": "firmwareVersion",
+        "topicExpression": "sensor/${deviceName}/${attributeKey}",
+        "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+      }
+    ],
+    "serverSideRpc": [
+      {
+        "type": "twoWay",
+        "deviceNameFilter": ".*",
+        "methodFilter": "echo",
+        "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+        "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+        "responseTopicQoS": 1,
+        "responseTimeout": 10000,
+        "valueExpression": "${params}"
+      },
+      {
+        "type": "oneWay",
+        "deviceNameFilter": ".*",
+        "methodFilter": "no-reply",
+        "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+        "valueExpression": "${params}"
+      }
+    ]
+  }
 }
-
