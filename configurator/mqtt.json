@@ -13,7 +13,7 @@
   },
   "dataMapping": [
     {
-      "topicFilter": "v1/devices/me/telemetr",
+      "topicFilter": "v1/devices/me/telemetry",
       "subscriptionQos": 1,
       "converter": {
         "type": "json",
@@ -54,38 +54,117 @@
           {
             "type": "float",
             "key": "voltage_a",
-            "value": "${modbus_chn_7}"
+            "value": "${modbus_chn_6}"
           },
           {
             "type": "float",
             "key": "voltage_b",
-            "value": "${modbus_chn_8}"
+            "value": "${modbus_chn_7}"
           },
           {
             "type": "float",
             "key": "voltage_c",
-            "value": "${modbus_chn_9}"
+            "value": "${modbus_chn_8}"
           },
           {
             "type": "float",
             "key": "current_a",
-            "value": "${modbus_chn_10}"
+            "value": "${modbus_chn_9}"
           },
           {
             "type": "float",
             "key": "current_b",
-            "value": "${modbus_chn_11}"
+            "value": "${modbus_chn_10}"
           },
           {
             "type": "float",
             "key": "current_c",
-            "value": "${modbus_chn_12}"
+            "value": "${modbus_chn_11}"
           },
-          
           {
             "type": "float",
-            "key": "modbus_chn_21",
+            "key": "IR_A",
+            "value": "${modbus_chn_12}"
+          },
+          {
+            "type": "float",
+            "key": "IR_B",
+            "value": "${modbus_chn_13}"
+          },
+          {
+            "type": "float",
+            "key": "IR_C",
+            "value": "${modbus_chn_14}"
+          },
+          {
+            "type": "float",
+            "key": "temp",
+            "value": "${modbus_chn_15}"
+          },
+          {
+            "type": "float",
+            "key": "hum",
+            "value": "${modbus_chn_16}"
+          },
+          {
+            "type": "float",
+            "key": "pressure",
+            "value": "${modbus_chn_17}"
+          },
+          {
+            "type": "float",
+            "key": "thermocouple_a",
+            "value": "${modbus_chn_18}"
+          },
+          {
+            "type": "float",
+            "key": "thermocouple_b",
+            "value": "${modbus_chn_19}"
+          },
+          {
+            "type": "float",
+            "key": "thermocouple_c",
+            "value": "${modbus_chn_20}"
+          },
+          {
+            "type": "float",
+            "key": "mppt_batary_voltage",
             "value": "${modbus_chn_21}"
+          },
+          {
+            "type": "float",
+            "key": "mppt_panel_power",
+            "value": "${modbus_chn_22}"
+          },
+          {
+            "type": "float",
+            "key": "harvesting_battery_voltage",
+            "value": "${modbus_chn_23}"
+          },
+          {
+            "type": "float",
+            "key": "harvesting_battery_power",
+            "value": "${modbus_chn_24}"
+          },
+          {
+            "type": "float",
+            "key": "ipec_pddata_avg_pd_a",
+            "value": "${modbus_chn_25}"
+          },
+          {
+            "type": "float",
+            "key": "ipec_pddata_avg_pd_b",
+            "value": "${modbus_chn_26}"
+          },
+          {
+            "type": "float",
+            "key": "ipec_pddata_avg_pd_c",
+            "value": "${modbus_chn_27}"
+          },
+          {
+            "type": "integer",
+            "key": "Water_Detection_Outside",
+            "value": "${modbus_chn_28}"
           },
           {
             "type": "integer",
@@ -98,83 +177,6 @@
             "value": "${snr}"
           }
         ]
-      }
-    },
-    {
-      "topicFilter": "sensor/+/data",
-      "subscriptionQos": 1,
-      "converter": {
-        "type": "json",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "topic",
-          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
-          "deviceProfileExpressionSource": "constant",
-          "deviceProfileExpression": "Thermometer"
-        },
-        "sendDataOnlyOnChange": false,
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "double",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "string",
-            "key": "humidity",
-            "value": "${hum}"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "sensor/raw_data",
-      "subscriptionQos": 1,
-      "converter": {
-        "type": "bytes",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "message",
-          "deviceNameExpression": "[0:4]",
-          "deviceProfileExpressionSource": "constant",
-          "deviceProfileExpression": "default"
-        },
-        "sendDataOnlyOnChange": false,
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "raw",
-            "key": "rawData",
-            "value": "[:]"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "raw",
-            "key": "temp",
-            "value": "[4:]"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "custom/sensors/+",
-      "subscriptionQos": 1,
-      "converter": {
-        "type": "custom",
-        "extension": "CustomMqttUplinkConverter",
-        "cached": true,
-        "extensionConfig": {
-          "temperature": 2,
-          "humidity": 2,
-          "batteryLevel": 1
-        }
       }
     }
   ],
