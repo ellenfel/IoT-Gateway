@@ -1,0 +1,100 @@
+{
+  "broker": {
+    "name": "Default Local Broker",
+    "host": "192.168.1.10",
+    "port": 1884,
+    "version": 5,
+    "clientId": "tb_gw_u8g59",
+    "maxNumberOfWorkers": 100,
+    "maxMessageNumberPerWorker": 10,
+    "security": {
+      "type": "anonymous"
+    }
+  },
+  "dataMapping": [
+    {
+      "topicFilter": "data/",
+      "subscriptionQos": 0,
+      "converter": {
+        "type": "json",
+        "deviceInfo": {
+          "deviceNameExpression": "demo-device",
+          "deviceNameExpressionSource": "constant",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
+        "attributes": [
+          {
+            "key": "power",
+            "value": "${power}",
+            "type": "integer"
+          },
+          {
+            "key": "frequency",
+            "value": "${frequency}",
+            "type": "integer"
+          }
+        ],
+        "timeseries": [
+          {
+            "key": "temperature",
+            "value": "${temperature}",
+            "type": "string"
+          },
+          {
+            "key": "humidity",
+            "value": "${humidity}",
+            "type": "double"
+          },
+          {
+            "key": "combine",
+            "value": "${humidity}:${temperature}",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "requestsMapping": {
+    "connectRequests": [
+      {
+        "topicFilter": "sensor/connect",
+        "deviceInfo": {
+          "deviceNameExpression": "${serialNumber}",
+          "deviceNameExpressionSource": "message",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/connect",
+        "deviceInfo": {
+          "deviceNameExpression": "?<=sensor\\/)(.*?)(?=\\/connect)",
+          "deviceNameExpressionSource": "topic",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        }
+      }
+    ],
+    "disconnectRequests": [
+      {
+        "topicFilter": "sensor/disconnect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/disconnect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
+        }
+      }
+    ]
+  },
+  "logLevel": "INFO",
+  "name": "emelec-test",
+  "enableRemoteLogging": true,
+  "id": "8295ebd7-77c6-4f39-b521-cf3fd75173ed"
+}
