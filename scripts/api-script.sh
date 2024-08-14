@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # MQTT Configuration
-MQTT_HOST="127.0.0.1"
-MQTT_PORT="1883"
+MQTT_HOST="78.189.102.104"
+MQTT_PORT="1890"
 
 # Define MQTT Topics
 MQTT_TOPICS=(
-    "new/topic"
+    "TXUC300"
 )
 
 # Define ThingsBoard URLs
 THINGSBOARD_URLS=(
-    "http://127.0.0.1:8080/api/v1/gg7ExbEDqK1Xf4dwIRu2/telemetry"
+    "http://127.0.0.1:8080/api/v1/GAKmp8ApfAsagXg1fPch/telemetry"
 )
 
 # Path to the JavaScript decoding script
-DECODE_SCRIPT_PATH="/home/ellenfel/Desktop/iot-gateway/decode.js"
+DECODE_SCRIPT_PATH="/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/decode.js"
 
 # Subscribe to MQTT topics
 for ((i=0; i<${#MQTT_TOPICS[@]}; i++)); do

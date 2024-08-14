@@ -1,32 +1,41 @@
 {
-    "broker": {
-      "name": "Default Local Broker",
-      "host": "127.0.0.1",
-      "port": 1883,
-      "clientId": "ThingsBoard_gateway",
-      "version": 5,
-      "maxMessageNumberPerWorker": 10,
-      "maxNumberOfWorkers": 100,
-      "sendDataOnlyOnChange": false,
-      "security": {
-        "type": "anonymous"
-      }
-    },
-    "dataMapping": [
-      {
-        "topicFilter": "v1/devices/me/telemetry",
-        "subscriptionQos": 1,
-        "converter": {
-          "type": "json",
-          "deviceInfo": {
-            "deviceNameExpressionSource": "message",
-            "deviceNameExpression": "${devName}",
-            "deviceProfileExpressionSource": "message"
+  "broker": {
+    "name": "Default Local Broker",
+    "host": "192.168.1.52",
+    "port": 1890,
+    "version": 5,
+    "clientId": "tb_gw_8swts",
+    "maxNumberOfWorkers": 100,
+    "maxMessageNumberPerWorker": 10,
+    "security": {
+      "type": "anonymous"
+    }
+  },
+  "dataMapping": [
+    {
+      "topicFilter": "data/",
+      "subscriptionQos": 0,
+      "converter": {
+        "type": "json",
+        "deviceInfo": {
+          "deviceNameExpression": "${devName}",
+          "deviceNameExpressionSource": "message",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "I-Link Box"
+        },
+        "attributes": [
+          {
+            "key": "frequency",
+            "value": "${frequency}",
+            "type": "string"
           },
-          "sendDataOnlyOnChange": false,
-          "timeout": 60000,
-          "attributes": [],
-          "timeseries": [
+          {
+            "key": "power",
+            "value": "${power}",
+            "type": "integer"
+          }
+        ],
+         "timeseries": [
             {
                 "type": "string",
                 "key": "devName",
@@ -182,8 +191,85 @@
               "key": "snr",
               "value": "${snr}"
             }
-          ]
+
+
+
+        ]
+      }
+    },
+    {
+      "topicFilter": "sensor/+/data",
+      "subscriptionQos": 0,
+      "converter": {
+        "type": "json",
+        "deviceInfo": {
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
+          "deviceNameExpressionSource": "topic",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
+        "attributes": [
+          {
+            "type": "string",
+            "key": "model",
+            "value": "${sensorModel}"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${temp}"
+          },
+          {
+            "type": "string",
+            "key": "humidity",
+            "value": "${hum}"
+          }
+        ]
+      }
+    }
+  ],
+  "requestsMapping": {
+    "connectRequests": [
+      {
+        "topicFilter": "sensor/connect",
+        "deviceInfo": {
+          "deviceNameExpression": "${serialNumber}",
+          "deviceNameExpressionSource": "message",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/connect",
+        "deviceInfo": {
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)",
+          "deviceNameExpressionSource": "topic",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        }
+      }
+    ],
+    "disconnectRequests": [
+      {
+        "topicFilter": "sensor/disconnect",
+        "deviceInfo": {
+          "deviceNameExpression": "${SerialNumber}",
+          "deviceNameExpressionSource": "message"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/disconnect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
         }
       }
     ]
-  }
+  },
+  "logLevel": "INFO",
+  "name": "emelec",
+  "enableRemoteLogging": false,
+  "id": "be6906e5-cd6e-4d7f-8bea-48ff1b84bb7a"
+}
