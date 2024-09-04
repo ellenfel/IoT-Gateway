@@ -2,6 +2,7 @@
 
 # Path to the JavaScript decoding script
 DECODE_SCRIPT_PATH="/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/app-parse/decode.js"
+PARSER_SCRIPT_PATH="/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/app-parse/parser.js"
 
 # Test input data
 TEST_INPUTS=(
@@ -13,6 +14,7 @@ for ((i=0; i<${#TEST_INPUTS[@]}; i++)); do
     test_input=${TEST_INPUTS[$i]}
     decoded_output=$(node $DECODE_SCRIPT_PATH "$test_input")
 
-    echo $decoded_output
+    # Pass the decoded output to the parser and echo the parsed output
+    parsed_output=$(node $PARSER_SCRIPT_PATH "$decoded_output")
+    echo $parsed_output
 done
-

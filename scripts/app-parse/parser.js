@@ -1,4 +1,4 @@
-const inputJson = `{
+const staticinputJson = `{
     "startFlag": 126,
     "type": 244,
     "length": 129,
@@ -53,6 +53,15 @@ const inputJson = `{
     ],
     "endFlag": 126
 }`;
+
+
+//const inputJson = process.argv[2];
+const inputJson = staticinputJson;
+
+if (!inputJson) {
+    console.error("Please provide a JSON string as an argument.");
+    process.exit(1);
+}
 
 const input = JSON.parse(inputJson);
 
