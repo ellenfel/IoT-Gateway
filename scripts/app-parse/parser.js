@@ -72,6 +72,7 @@ const output = {
     gpio_in_4: input.din[3] ? "on" : "off",
     gpio_out_1: input.dout[0] ? "on" : "off",
     gpio_out_2: input.dout[1] ? "on" : "off",
+    devName: "I-Link Box 3",
 };
 
 input.sin.forEach((sinItem) => {
