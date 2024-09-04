@@ -15,3 +15,4 @@ for ((i=0; i<${#TEST_INPUTS[@]}; i++)); do
 
     echo $decoded_output
 done
+

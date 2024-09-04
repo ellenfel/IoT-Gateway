@@ -10,7 +10,7 @@
 
 # MQTT Configuration
 MQTT_HOST="127.0.0.1"
-MQTT_PORT="1883"
+MQTT_PORT="1884"
 
 # Define MQTT Topics
 MQTT_TOPICS=(
@@ -19,7 +19,7 @@ MQTT_TOPICS=(
 
 # Define ThingsBoard URLs
 THINGSBOARD_URLS=(
-    "http://127.0.0.1:8080/api/v1/GAKmp8ApfAsagXg1fPch/telemetry"
+    "http://127.0.0.1:8080/api/v1/LgocneeDSnVuZvBYkBFS/telemetry"
 )
 
 # Path to the JavaScript decoding script

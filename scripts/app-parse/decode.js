@@ -1,10 +1,10 @@
 /**
  * Payload Decoder for Cellular
  *
- * Copyright 2024 Milesight IoT
  *
  * @product UC300
  */
+
 function decodeUplink(buffer) {
     if (typeof buffer === "string") {
         buffer = Buffer.from(buffer.replace(/\s/g, ""), "hex");
@@ -332,6 +332,23 @@ class BufferReader {
     }
 }
 
+
+
+// Get the hex string from the command-line arguments
+const hexString = process.argv[2];
+
+if (!hexString) {
+    console.error("Please provide a hex string as an argument.");
+    process.exit(1);
+}
+
+// Your existing decoding logic here
+console.log(`Decoding hex string: ${hexString}`);
+
+// Example decoding logic (replace with your actual logic)
+const buffer = Buffer.from(hexString.replace(/\s/g, ""), "hex");
+const result = decodeUplink(buffer);
+console.log(JSON.stringify(result, null, 2));
 
 
 /*** 
