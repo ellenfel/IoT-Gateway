@@ -1,12 +1,16 @@
 #!/bin/bash
 
-#!/bin/bash
-
 ##############################################
 # This script is responsible for subscribing to MQTT topics,
 # decoding the received messages, parsing the decoded messages, 
 # and publishing the parsed output back to an MQTT topic.
 ##############################################
+
+# Define log file path
+LOG_FILE="/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/app-parse/api-script.log"
+
+# Redirect stdout and stderr to the log file
+exec > >(tee -a "$LOG_FILE") 2>&1
 
 # MQTT Configuration
 MQTT_HOST="78.189.102.104"       # The MQTT broker host address

@@ -2,7 +2,7 @@
  * Payload Decoder for Cellular
  *
  *
- * @product UC300
+ * product UC300
  */
 
 function decodeUplink(buffer) {

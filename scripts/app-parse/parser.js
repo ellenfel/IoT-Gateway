@@ -55,8 +55,13 @@ const staticinputJson = `{
 }`;
 
 
-//const inputJson = process.argv[2];
-const inputJson = staticinputJson;
+//const inputJson = staticinputJson;
+
+
+
+
+
+const inputJson = process.argv[2];
 
 if (!inputJson) {
     console.error("Please provide a JSON string as an argument.");
