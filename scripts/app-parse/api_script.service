@@ -1,0 +1,16 @@
+[Unit]
+Description=MQTT Parse Service
+After=network.target
+
+[Service]
+ExecStart=/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/app-parse/api-script.sh
+WorkingDirectory=/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/app-parse/
+StandardOutput=append:/var/log/mqtt-parse.log
+StandardError=append:/var/log/mqtt-parse.log
+Restart=always
+User=ellenfel
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

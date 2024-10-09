@@ -13,10 +13,10 @@ LOG_FILE="/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/app-parse/api
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 # MQTT Configuration
-MQTT_HOST="78.189.102.104"       # The MQTT broker host address
-MQTT_PORT="1890"                 # The MQTT broker port
-MQTT_PUB_PORT="1890"             # The MQTT broker port for publishing
-MQTT_PUB_TOPIC="data"            # The MQTT topic to publish the parsed output
+MQTT_HOST="78.189.102.104"       # The MQTT broker host address                     78.189.102.104
+MQTT_PORT="1890"                 # The MQTT broker port                             1890
+MQTT_PUB_PORT="1890"             # The MQTT broker port for publishing              1890
+MQTT_PUB_TOPIC="data"            # The MQTT topic to publish the parsed output      data
 
 # Define MQTT Topics
 MQTT_TOPICS=(

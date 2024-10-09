@@ -1,0 +1,1120 @@
+Decoded message: {
+  "startFlag": 126,
+  "type": 244,
+  "length": 125,
+  "version": 11,
+  "timestamp": 1725448774,
+  "mobileSignal": 28,
+  "doutEnabled": [
+    1,
+    1
+  ],
+  "dout": [
+    0,
+    0
+  ],
+  "diMode": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "din": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "counter": [],
+  "ainMode": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "ain": [
+    {
+      "index": 1,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 2,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 3,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 4,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 5,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 6,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 7,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 8,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    }
+  ],
+  "sin": [
+    {
+      "index": 1,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          311
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          311
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          311
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 25,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 26,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 27,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    }
+  ],
+  "endFlag": 126
+}
+Parsed output: {
+  "gpio_in_1": "off",
+  "gpio_in_2": "off",
+  "gpio_in_3": "off",
+  "gpio_in_4": "off",
+  "gpio_out_1": "off",
+  "gpio_out_2": "off",
+  "devName": "I-Link Box 3",
+  "modbus_chn_1": 0,
+  "modbus_chn_2": 0,
+  "modbus_chn_3": 0,
+  "modbus_chn_4": 0,
+  "modbus_chn_5": 0,
+  "modbus_chn_6": 0,
+  "modbus_chn_7": 0,
+  "modbus_chn_8": 0,
+  "modbus_chn_9": 0,
+  "modbus_chn_10": 0,
+  "modbus_chn_11": 0,
+  "modbus_chn_12": 0,
+  "modbus_chn_13": 0,
+  "modbus_chn_14": 0,
+  "modbus_chn_15": 0,
+  "modbus_chn_16": 0,
+  "modbus_chn_17": 0,
+  "modbus_chn_18": 3.11,
+  "modbus_chn_19": 3.11,
+  "modbus_chn_20": 3.11,
+  "modbus_chn_21": 0,
+  "modbus_chn_22": 0,
+  "modbus_chn_23": 0,
+  "modbus_chn_24": 0,
+  "modbus_chn_25": 0,
+  "modbus_chn_26": 0,
+  "modbus_chn_27": 0
+}
+Decoded message: {
+  "startFlag": 126,
+  "type": 244,
+  "length": 125,
+  "version": 11,
+  "timestamp": 1725448774,
+  "mobileSignal": 28,
+  "doutEnabled": [
+    1,
+    1
+  ],
+  "dout": [
+    0,
+    0
+  ],
+  "diMode": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "din": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "counter": [],
+  "ainMode": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "ain": [
+    {
+      "index": 1,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 2,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 3,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 4,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 5,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 6,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 7,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    },
+    {
+      "index": 8,
+      "count": 0,
+      "timeStep": 0,
+      "values": []
+    }
+  ],
+  "sin": [
+    {
+      "index": 1,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 5,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 6,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 7,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 8,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 9,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 10,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 11,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 12,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 13,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 14,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 15,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 16,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 17,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 18,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          311
+        ]
+      ]
+    },
+    {
+      "index": 19,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          311
+        ]
+      ]
+    },
+    {
+      "index": 20,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          311
+        ]
+      ]
+    },
+    {
+      "index": 21,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 22,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 23,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 24,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 25,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 26,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "index": 27,
+      "length": 1,
+      "timeStep": 0,
+      "times": 1,
+      "collectSuccess": true,
+      "quantity": 1,
+      "regType": "REG_HOLD_INT16",
+      "sign": 0,
+      "decimal": 0,
+      "values": [
+        [
+          0
+        ]
+      ]
+    }
+  ],
+  "endFlag": 126
+}
+Parsed output: {
+  "gpio_in_1": "off",
+  "gpio_in_2": "off",
+  "gpio_in_3": "off",
+  "gpio_in_4": "off",
+  "gpio_out_1": "off",
+  "gpio_out_2": "off",
+  "devName": "I-Link Box 3",
+  "modbus_chn_1": 0,
+  "modbus_chn_2": 0,
+  "modbus_chn_3": 0,
+  "modbus_chn_4": 0,
+  "modbus_chn_5": 0,
+  "modbus_chn_6": 0,
+  "modbus_chn_7": 0,
+  "modbus_chn_8": 0,
+  "modbus_chn_9": 0,
+  "modbus_chn_10": 0,
+  "modbus_chn_11": 0,
+  "modbus_chn_12": 0,
+  "modbus_chn_13": 0,
+  "modbus_chn_14": 0,
+  "modbus_chn_15": 0,
+  "modbus_chn_16": 0,
+  "modbus_chn_17": 0,
+  "modbus_chn_18": 3.11,
+  "modbus_chn_19": 3.11,
+  "modbus_chn_20": 3.11,
+  "modbus_chn_21": 0,
+  "modbus_chn_22": 0,
+  "modbus_chn_23": 0,
+  "modbus_chn_24": 0,
+  "modbus_chn_25": 0,
+  "modbus_chn_26": 0,
+  "modbus_chn_27": 0
+}
