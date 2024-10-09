@@ -343,11 +343,12 @@ if (!hexString) {
 }
 
 // Your existing decoding logic here
-console.log(`Decoding hex string: ${hexString}`);
+// console.log(`Decoding hex string: ${hexString}`);
 
 // Example decoding logic (replace with your actual logic)
 const buffer = Buffer.from(hexString.replace(/\s/g, ""), "hex");
 const result = decodeUplink(buffer);
+
 console.log(JSON.stringify(result, null, 2));
 
 
