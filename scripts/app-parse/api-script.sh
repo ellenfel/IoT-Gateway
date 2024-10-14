@@ -32,8 +32,9 @@ PARSER_SCRIPT_PATH="/home/ellenfel/Desktop/repos/project-iot-gateway/scripts/app
 
 # Subscribe to MQTT topics
 for topic in "${MQTT_TOPICS[@]}"; do
-    mosquitto_sub -h $MQTT_HOST -p $MQTT_PORT -t "$topic" | while read -r raw_hex_message; do
+    mosquitto_sub -h $MQTT_HOST -p $MQTT_PORT -t "$topic" -F %X | while read -r raw_hex_message; do
         # Call the JavaScript decoding script to decode the raw hex message
+        echo "Raw hex message: $raw_hex_message"
         decoded_message=$(node $DECODE_SCRIPT_PATH "$raw_hex_message")
 
         # Echo the decoded message for debugging purposes
